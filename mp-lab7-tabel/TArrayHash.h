@@ -25,7 +25,7 @@ public:
 	void Reset();
 	void GoNext();
 	bool IsEnd();
-
+	void Print(std::ostream& os);
 	TKey GetCurrentKey() const
 	{
 		return arr[curr].key;
@@ -36,7 +36,7 @@ public:
 	}
 };
 
- TArrayHash::TArrayHash(int _size, int _step)
+TArrayHash::TArrayHash(int _size, int _step)
 {
 	size = _size;
 	step = _step;
@@ -48,17 +48,17 @@ public:
 		arr[i] = free;
 }
 
- TArrayHash::~TArrayHash()
+TArrayHash::~TArrayHash()
 {
 	delete[] arr;
 }
 
- bool TArrayHash::IsFull() const
+bool TArrayHash::IsFull() const
 {
 	return (DataCount == size);
 }
 
- bool TArrayHash::Find(TKey key)
+bool TArrayHash::Find(TKey key)
 {
 	int flag = -1;
 	int Currpos = HashFunc(key) % size;
@@ -88,7 +88,8 @@ public:
 	return false;
 }
 
- bool TArrayHash::Insert(TRecord rec)
+
+bool TArrayHash::Insert(TRecord rec)
 {
 	if (IsFull()) return false;
 	if (Find(rec.key)) return false;
@@ -99,7 +100,7 @@ public:
 	return true;
 }
 
- bool TArrayHash::Delete(TKey key)
+bool TArrayHash::Delete(TKey key)
 {
 	if (IsEmpty()) return false;
 	if (!Find(key)) return false;
@@ -115,22 +116,30 @@ public:
 	return true;
 }
 
- void TArrayHash::Reset()
+void TArrayHash::Reset()
 {
 	for (curr = 0; curr < size; curr++)
 		if (arr[curr] != del && arr[curr] != free)
 			return;
 }
 
- void TArrayHash::GoNext()
+void TArrayHash::GoNext()
 {
 	for (curr++; curr < size; curr++)
 		if (arr[curr] != del && arr[curr] != free)
 			return;
 }
 
- bool TArrayHash::IsEnd()
+bool TArrayHash::IsEnd()
 {
 	return curr == size;
 }
 
+void TArrayHash::Print(std::ostream& os)
+{
+	for (Reset(); !IsEnd(); GoNext()) {
+		os << arr[curr] << std::endl;
+	}
+	Reset();
+	os << std::endl;
+}

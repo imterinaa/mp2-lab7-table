@@ -18,36 +18,36 @@
     <ClCompile Include="mp-lab7-tabel.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\main.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\TArrayHash.h">
+    <ClInclude Include="TBalTree.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\TArrayTable.h">
+    <ClInclude Include="Stack.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\TBalancedTree.h">
+    <ClInclude Include="TArrayHash.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\THashTable.h">
+    <ClInclude Include="TArrayTable.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\TScanTable.h">
+    <ClInclude Include="THashTable.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\TSortTable.h">
+    <ClInclude Include="TScanTable.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\TTable.h">
+    <ClInclude Include="TSortTable.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\TTreeTable.h">
+    <ClInclude Include="TTreeTable.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\Stack.h">
+    <ClInclude Include="TTable.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

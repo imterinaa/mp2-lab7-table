@@ -8,11 +8,12 @@ public:
 	bool Find(TKey key);
 	bool Insert(TRecord rec);
 	bool Delete(TKey key);
+	void Print(std::ostream& os);
 };
 
- TScanTable::TScanTable(int _size) : TArrayTable(_size) { }
+TScanTable::TScanTable(int _size) : TArrayTable(_size) { }
 
- bool TScanTable::Find(TKey key)
+bool TScanTable::Find(TKey key)
 {
 	for (int i = 0; i < DataCount; i++) {
 		Eff++;
@@ -25,7 +26,7 @@ public:
 	return false;
 }
 
- bool TScanTable::Insert(TRecord rec)
+bool TScanTable::Insert(TRecord rec)
 {
 	if (IsFull()) {
 		return false;
@@ -39,8 +40,14 @@ public:
 	Eff++;
 	return true;
 }
-
- bool TScanTable::Delete(TKey key)
+void TScanTable::Print(std::ostream& os)
+{
+	for (int i = 0; i < DataCount; i++) {
+		os << arr[i] << std::endl;
+	}
+	os << std::endl;
+}
+bool TScanTable::Delete(TKey key)
 {
 	if (!Find(key)) {
 		return false;

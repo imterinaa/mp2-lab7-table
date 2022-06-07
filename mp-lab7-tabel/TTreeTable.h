@@ -84,12 +84,12 @@ void TTreeTable::PrintRec(std::ostream& os, TNode* pNode, int level)
 		for (int i = 0; i < level; i++)
 			os << "  ";
 		os << pNode->rec.key << std::endl;
-		
 
-		
+
+
 		PrintRec(os, pNode->pLeft, level + 1);
 		PrintRec(os, pNode->pRight, level + 1);
-		
+
 	}
 }
 
@@ -110,8 +110,8 @@ TTreeTable::~TTreeTable()
 
 bool TTreeTable::IsFull() const
 {
-		return false;
-	
+	return false;
+
 }
 
 bool TTreeTable::Find(TKey key)
@@ -171,21 +171,21 @@ bool TTreeTable::Delete(TKey key)
 
 		if (pPrev == nullptr)
 			pRoot = pCurr->pLeft;
-		
+
 		else
 		{
 			if (pCurr->rec.key > pPrev->rec.key)
 				pPrev->pRight = pCurr->pLeft;
-			
+
 			else
 				pPrev->pLeft = pCurr->pRight;
 		}
 	}
-	
+
 	else if (pCurr->pLeft == nullptr)
 	{
 		Eff++;
-		
+
 		if (pPrev == nullptr)
 			pRoot = pRoot->pRight;
 
@@ -193,7 +193,7 @@ bool TTreeTable::Delete(TKey key)
 		{
 			if (pCurr->rec.key > pPrev->rec.key)
 				pPrev->pLeft = pCurr->pRight;
-			
+
 			else
 				pPrev->pRight = pCurr->pLeft;
 		}
@@ -201,27 +201,27 @@ bool TTreeTable::Delete(TKey key)
 
 	else
 	{
-		 tmp = tmp->pLeft;
+		tmp = tmp->pLeft;
 
 		pPrev = pCurr;
-		
+
 		while (tmp->pRight != nullptr)
 		{
 			Eff++;
 			pPrev = tmp;
 			tmp = tmp->pRight;
 		}
-		
+
 		pCurr->rec = tmp->rec;
 
-		if (pCurr->pLeft==tmp)
+		if (pCurr->pLeft == tmp)
 			pPrev->pLeft = tmp->pLeft;
-		
+
 		else
 			pPrev->pRight = tmp->pLeft;
 
 		delete tmp;
-		
+
 	}
 	Eff++;
 	DataCount--;
@@ -284,6 +284,6 @@ TValue TTreeTable::GetCurrentValue() const
 void TTreeTable::Print(std::ostream& os)
 {
 	PrintRec(os, pRoot, 0);
-	
+
 }
 

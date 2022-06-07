@@ -10,17 +10,18 @@ class TSortTable : public TScanTable {
 	void Sort();
 public:
 	TSortTable(int _size = 10);
-	
+
 	TSortTable(TScanTable& st);
 
 	bool Find(TKey key);
 	bool Insert(TRecord rec);
 	bool Delete(TKey key);
+	void Print(std::ostream& os);
 };
 
- TSortTable::TSortTable(int _size) : TScanTable(_size) {}
+TSortTable::TSortTable(int _size) : TScanTable(_size) {}
 
- TSortTable::TSortTable(TScanTable& st) : TScanTable(st.GetSize()) {
+TSortTable::TSortTable(TScanTable& st) : TScanTable(st.GetSize()) {
 	DataCount = st.GetDataCount();
 	int i;
 	for (i = 0, st.Reset(); !st.IsEnd(); st.GoNext(), i++)
@@ -32,7 +33,7 @@ public:
 
 }
 
- bool TSortTable::Find(TKey key) {
+bool TSortTable::Find(TKey key) {
 	int begin = 0, end = DataCount - 1, mid;
 	while (begin <= end) {
 		Eff++;
@@ -86,7 +87,7 @@ bool TSortTable::Delete(TKey key) {
 	return true;
 }
 
- void TSortTable::QuickSort(int first, int last) {
+void TSortTable::QuickSort(int first, int last) {
 	TKey midKey = arr[(first + last) / 2].key;
 
 	int f = first, l = last;
@@ -118,27 +119,15 @@ bool TSortTable::Delete(TKey key) {
 
 }
 
-// void TSortTable::SelectionSort()
-//{
-//	int Currpos;
-//
-//	for (int i = 0; i < DataCount; i++)
-//	{
-//		Currpos = i;
-//
-//		for (int j = i; j < DataCount; j++)
-//		{
-//			Eff++;
-//			if (arr[j].key < arr[Currpos].key)
-//				Currpos = j;
-//		}
-//
-//		std::swap(arr[Currpos], arr[i]);
-//		Eff++;
-//	}
-//}
 
- void TSortTable::Sort()
+void TSortTable::Print(std::ostream& os)
+{
+	for (int i = 0; i < DataCount; i++) {
+		os << arr[i] << std::endl;
+	}
+	os << std::endl;
+}
+void TSortTable::Sort()
 {
 	{
 		QuickSort(0, DataCount - 1);

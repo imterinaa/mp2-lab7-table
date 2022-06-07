@@ -25,12 +25,12 @@ public:
 	}
 
 	void Reset() { curr = 0; }
-	void GoNext() { curr++ ; }
-	
+	void GoNext() { curr++; }
+
 	bool IsEnd() { return curr == DataCount; }
 };
 
- TArrayTable::TArrayTable(int _size) 
+TArrayTable::TArrayTable(int _size)
 {
 	size = _size;
 	arr = new TRecord[size];

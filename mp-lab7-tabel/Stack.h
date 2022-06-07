@@ -64,7 +64,7 @@ bool TStack<T>::IsEmpty() {
 }
 
 template<class T>
- bool TStack<T>::IsFull()
+bool TStack<T>::IsFull()
 {
 	return (Currpos == size - 1);
 }
@@ -80,13 +80,13 @@ void TStack<T>::Push(T elem) {
 }
 
 template<class T>
- void TStack<T>::Clear()
+void TStack<T>::Clear()
 {
 	Currpos = -1;
 }
 
 template <class T>
- T TStack<T>::Pop() {
+T TStack<T>::Pop() {
 	if (IsEmpty()) {
 		throw "ERROR";
 	}
@@ -97,7 +97,7 @@ template <class T>
 }
 
 template<class T>
- T TStack<T>::Top()
+T TStack<T>::Top()
 {
 	if (IsEmpty()) {
 		throw "ERROR";
@@ -107,7 +107,7 @@ template<class T>
 }
 
 template<class T>
- bool TStack<T>::operator==(const TStack& ts) const
+bool TStack<T>::operator==(const TStack& ts) const
 {
 	if (size != ts.size) {
 		return false;
@@ -123,7 +123,7 @@ template<class T>
 }
 
 template<class T>
- bool TStack<T>::operator!=(const TStack& ts) const
+bool TStack<T>::operator!=(const TStack& ts) const
 {
 	return !(this == &ts);
 }

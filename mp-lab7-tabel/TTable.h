@@ -38,6 +38,11 @@ struct TRecord {
 	bool operator<=(const TRecord& other) const {
 		return key <= other.key;
 	}
+	friend std::ostream& operator<< (std::ostream& os, const TRecord rec)
+	{
+		os << rec.key << " " << rec.val;
+		return os;
+	}
 };
 
 class TTable {
@@ -63,6 +68,9 @@ public:
 	virtual void Reset() = 0;
 	virtual void GoNext() = 0;
 	virtual bool IsEnd() = 0;
+	
+
+	virtual void Print(std::ostream& os) = 0;
 
 	virtual TKey GetCurrentKey() const = 0;
 	virtual TValue GetCurrentValue() const = 0;
@@ -75,24 +83,24 @@ public:
 	}
 };
 
- TTable::TTable() {
+TTable::TTable() {
 	DataCount = Eff = 0;
 }
 
- TTable::~TTable() { }
+TTable::~TTable() { }
 
- int TTable::GetDataCount() const {
+int TTable::GetDataCount() const {
 	return DataCount;
 }
 
- int TTable::GetEff() const {
+int TTable::GetEff() const {
 	return Eff;
 }
 
- void TTable::ClearEff() {
+void TTable::ClearEff() {
 	Eff = 0;
 }
 
- bool TTable::IsEmpty() {
+bool TTable::IsEmpty() {
 	return DataCount == 0;
 }

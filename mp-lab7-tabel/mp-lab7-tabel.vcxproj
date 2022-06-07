@@ -139,19 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\main.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="mp-lab7-tabel.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\Stack.h" />
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\TArrayHash.h" />
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\TArrayTable.h" />
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\TBalancedTree.h" />
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\THashTable.h" />
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\TScanTable.h" />
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\TSortTable.h" />
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\TTable.h" />
-    <ClInclude Include="..\..\mp2-lab7-tablgges\mp2-lab7-tables\TTreeTable.h" />
+    <ClInclude Include="Stack.h" />
+    <ClInclude Include="TArrayHash.h" />
+    <ClInclude Include="TArrayTable.h" />
+    <ClInclude Include="TBalTree.h" />
+    <ClInclude Include="THashTable.h" />
+    <ClInclude Include="TScanTable.h" />
+    <ClInclude Include="TSortTable.h" />
+    <ClInclude Include="TTable.h" />
+    <ClInclude Include="TTreeTable.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
