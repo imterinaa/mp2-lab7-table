@@ -6,7 +6,7 @@ protected:
 	TRecord* arr;
 	int size, curr;
 public:
-	TArrayTable(int _size = 10);
+	TArrayTable(int _size = 50);
 	~TArrayTable()
 	{
 		delete[] arr;

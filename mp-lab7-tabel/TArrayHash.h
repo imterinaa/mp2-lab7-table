@@ -12,7 +12,7 @@ protected:
 	int step;
 	int curr;
 public:
-	TArrayHash(int _size = 10, int _step = 5);
+	TArrayHash(int _size = 50, int _step = 5);
 	~TArrayHash();
 
 	bool IsFull() const override;

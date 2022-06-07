@@ -52,12 +52,10 @@ void NewTable(int _type)
 	srand(time(NULL));
 
 	TRecord insertRec;
-	for (int i = 0; i < 20; i++) {
-		TKey randKey = (int)((double)rand() / (RAND_MAX + 1)*(20+1));
-
+	for (int i = 0; i < 10; i++) {
+		insertRec.key = rand() % 100;
 		bool inserted = table->Insert(
-			TRecord(randKey, "value" + to_string(randKey)) 
-		);
+			TRecord(insertRec.key, "value" + to_string(insertRec.key)));
 	}
 }
 
